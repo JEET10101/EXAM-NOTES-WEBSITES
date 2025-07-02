@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Previous Papers | GENX Notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<div class="main">
+  <video autoplay loop muted playsinline class="back-video" src="4.mp4"></video>
+
+  <div class="navbar">
+    <div class="logo">GENX Notes</div>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="subjects.html">SUBJECTS</a></li>
+        <li><a href="notes.html">NOTES</a></li>
+        <li><a href="papers.html" class="active">PAPERS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+    <div class="search">
+      <input class="srch" type="search" placeholder="Search papers...">
+      <button class="btn">Search</button>
+    </div>
+  </div>
+  
+  <div class="papers-container">
+    <h1 class="page-title">Previous <span>Year Papers</span></h1>
+    <p class="page-description">Access question papers from last 5 years</p>
+    
+    <div class="filters">
+      <div class="filter-group">
+        <label for="year-filter">Year:</label>
+        <select id="year-filter">
+          <option value="all">All Years</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="subject-filter">Subject:</label>
+        <select id="subject-filter">
+          <option value="all">All Subjects</option>
+          <option value="cs">Computer Science</option>
+          <option value="math">Mathematics</option>
+          <option value="physics">Physics</option>
+          <option value="biology">Biology</option>
+        </select>
+      </div>
+      <button class="filter-btn">Apply Filters</button>
+    </div>
+    
+    <div class="papers-grid">
+      <div class="paper-card">
+        <div class="paper-badge cs-badge">Computer Science</div>
+        <h3>Final Exam 2023</h3>
+        <div class="paper-meta">
+          <span><i class="fas fa-calendar-alt"></i> May 2023</span>
+          <span><i class="fas fa-file-pdf"></i> PDF</span>
+        </div>
+        <p>Complete question paper with solutions</p>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+      </div>
+      
+      <div class="paper-card">
+        <div class="paper-badge math-badge">Mathematics</div>
+        <h3>Semester II 2022</h3>
+        <div class="paper-meta">
+          <span><i class="fas fa-calendar-alt"></i> Dec 2022</span>
+          <span><i class="fas fa-file-pdf"></i> PDF</span>
+        </div>
+        <p>Calculus and Linear Algebra</p>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+      </div>
+      
+      <div class="paper-card">
+        <div class="paper-badge physics-badge">Physics</div>
+        <h3>Mid-Term 2023</h3>
+        <div class="paper-meta">
+          <span><i class="fas fa-calendar-alt"></i> Mar 2023</span>
+          <span><i class="fas fa-file-pdf"></i> PDF</span>
+        </div>
+        <p>Electromagnetism and Thermodynamics</p>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+      </div>
+    </div>
+    
+    <div class="pagination">
+      <a href="#" class="page-link disabled"><i class="fas fa-chevron-left"></i></a>
+      <a href="#" class="page-link active">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link">3</a>
+      <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
