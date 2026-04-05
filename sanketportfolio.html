@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanket Rout | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        #about {
+            background-color: white;
+        }
+        
+        #about .container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        #about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #about .bio {
+            flex: 1;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill {
+            background-color: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        #projects {
+            background-color: var(--light-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        #contact {
+            background-color: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            #about .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sanket Rout</h1>
+            <p>Web Developer | CSBS Student</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <img src="https://via.placeholder.com/200" alt="Sanket Rout">
+            <div class="bio">
+                <h2>About Me</h2>
+                <p>Hello! I'm Sanket Rout, a passionate Computer Science student specializing in Business Systems. I love creating beautiful, functional websites and applications that solve real-world problems.</p>
+                <p>Currently pursuing my degree in CSBS at my university, I'm constantly learning new technologies and frameworks to enhance my development skills.</p>
+                
+                <div class="skills">
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS3</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">React</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">UI/UX</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Exam Notes Website">
+                    </div>
+                    <div class="project-info">
+                        <h3>Exam Notes Website</h3>
+                        <p>A platform for students to find and share study materials for various exams. Built with HTML, CSS, JavaScript and Firebase.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/JEET10101/EXAM-NOTES-WEBSITES.git" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="E-commerce Store">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Store</h3>
+                        <p>Full-featured online store with product listings, cart functionality, and user authentication.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn">View Code</a>
+                            <a href="#" class="btn btn-outline">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Task Management App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>A productivity application to help users organize their tasks with deadlines and priority levels.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn">View Code</a>
+                            <a href="#" class="btn btn-outline">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out for collaborations or just to say hello!</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>sanket.rout@example.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+91 9876543210</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Bhubaneswar, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Sanket Rout. All rights reserved.</p>
+            <p>Student ID: 221001020053 | Batch: CSBS3</p>
+            
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
